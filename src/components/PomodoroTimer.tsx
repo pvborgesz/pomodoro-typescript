@@ -25,7 +25,7 @@ export function PomodoroTimer(props:Props) : JSX.Element{
 
         if (working) {
             document.body.classList.add('working')
-            setStatus('Trabalhando')
+            setStatus('Trabalhando 😡')
         } else {
             document.body.classList.remove('working')
         }
@@ -37,13 +37,13 @@ export function PomodoroTimer(props:Props) : JSX.Element{
 
     const configureWork: any = () => {
         setMainTime(25*60)
-        setStatus('Trabalhando')
+        setStatus('Trabalhando 😡')
         setTimeCounting(true)
         setWorking(true)
     }
 
     const restartWork: any = () =>{
-        setStatus('Descansando')
+        setStatus('Descansando 😴')
         setMainTime(props.pomodoroTime)
         setTimeCounting(!timeCounting)
         setWorking(false)
@@ -51,7 +51,7 @@ export function PomodoroTimer(props:Props) : JSX.Element{
 
     const pauseWork: any = () => {
         setWorking(false)
-        setStatus('Descansando')
+        setStatus('Descansando 😴')
         setMainTime(5*60)
         setTimeCounting(!timeCounting)
         setMainTime(props.shortRestTime)
@@ -62,7 +62,7 @@ export function PomodoroTimer(props:Props) : JSX.Element{
         setTimeCounting(!timeCounting)
         setMainTime(props.longRestTime)
         setTimeCounting(true)
-        setStatus('Descansando')
+        setStatus('Descansando 😴')
     }
     return (
         <div className="pomodoro">
