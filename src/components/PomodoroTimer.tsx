@@ -53,6 +53,7 @@ export function PomodoroTimer(props:Props) : JSX.Element{
         setStatus('Descansando')
         setTimeCounting(!timeCounting)
         setMainTime(props.shortRestTime)
+        if (timeCounting) setMainTime(25*60)
         setTimeCounting(true)
     }
 
