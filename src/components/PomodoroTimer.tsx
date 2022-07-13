@@ -36,6 +36,7 @@ export function PomodoroTimer(props:Props) : JSX.Element{
     }, timeCounting ? 1000 : null)
 
     const configureWork: any = () => {
+        setMainTime(25*60)
         setStatus('Trabalhando')
         setTimeCounting(true)
         setWorking(true)
@@ -51,10 +52,9 @@ export function PomodoroTimer(props:Props) : JSX.Element{
     const pauseWork: any = () => {
         setWorking(false)
         setStatus('Descansando')
+        setMainTime(5*60)
         setTimeCounting(!timeCounting)
         setMainTime(props.shortRestTime)
-        if (timeCounting) setMainTime(25*60)
-        setTimeCounting(true)
     }
 
     const longPause: any = () =>{
