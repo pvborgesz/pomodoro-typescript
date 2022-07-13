@@ -19,13 +19,17 @@ export function PomodoroTimer(props:Props) : JSX.Element{
     const [status, setStatus] = useState('Descansando')
 
     useEffect( () =>{
+        if(mainTime < 0){
+            pauseWork()
+        }
+
         if (working) {
             document.body.classList.add('working')
             setStatus('Trabalhando')
         } else {
             document.body.classList.remove('working')
         }
-    }, [working])
+    }, [working, mainTime])
 
     useInterval(()=>{
         setMainTime(mainTime-1)
@@ -46,10 +50,10 @@ export function PomodoroTimer(props:Props) : JSX.Element{
 
     const pauseWork: any = () => {
         setWorking(false)
+        setStatus('Descansando')
         setTimeCounting(!timeCounting)
         setMainTime(props.shortRestTime)
         setTimeCounting(true)
-        setStatus('Descansando')
     }
 
     const longPause: any = () =>{
