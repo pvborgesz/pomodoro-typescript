@@ -78,6 +78,23 @@ body {
   justify-content: space-evenly;
 }
 
+.footer {
+  font-family: 'Montserrat';
+  font-size: 14px;
+
+  width: 100%;
+}
+.footer p, footer a {
+  color: rgb(64, 65, 87);
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 40vh
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
